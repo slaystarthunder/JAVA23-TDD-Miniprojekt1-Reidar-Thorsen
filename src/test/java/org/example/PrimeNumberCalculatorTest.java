@@ -15,5 +15,6 @@ public class PrimeNumberCalculatorTest {
             assertTrue(calculator.isPrime(5));
             assertTrue(calculator.isPrime(7));
 
+
         }
 }
