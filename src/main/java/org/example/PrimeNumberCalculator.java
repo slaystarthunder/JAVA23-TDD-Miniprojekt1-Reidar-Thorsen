@@ -19,6 +19,8 @@ public class PrimeNumberCalculator {
 
     // This method counts prime numbers within a given range [start, end]
     public int countPrimeNumbers(int start, int end) {
+        // Checks the input so it's valid
+        validateInput(start, end);
         int count = 0;
         for (int i = start; i <= end; i++) {
             if (isPrime(i)) {
@@ -29,6 +31,8 @@ public class PrimeNumberCalculator {
     }
 
     public int sumPrimeNumbers(int start, int end) {
+        // Checks the input so it's valid
+        validateInput(start, end);
         // Initalize the sum to 0
         int sum = 0;
 
@@ -44,4 +48,36 @@ public class PrimeNumberCalculator {
         return sum;
     }
 
+    private void validateInput(int start, int end) {
+        if (start <0 || end > 1000 || start > end) {
+            throw new IllegalArgumentException("Oops, wrong interval specified");
+        }
+    }
+
+    // Console output methods
+    public void printCount(int start, int end) {
+        int count = countPrimeNumbers(start,  end);
+        System.out.println("Hi, there are " + count + " prime numbers between 0 and 1000");
+    }
+
+    public void printSum(int start, int end) {
+        int sum = sumPrimeNumbers(start, end);
+        System.out.println("The total sum of these numbers are " + sum + ".");
+    }
+
+
+    // Main method
+    public static void main(String[] args) {
+        PrimeNumberCalculator calculator = new PrimeNumberCalculator();
+
+        // Define the range of calculation
+        int start = 0;
+        int end = 1000;
+
+        // Print the number of prime numbers in range
+        calculator.printCount(start, end);
+
+        // Print the sum of prime numbers
+        calculator.printSum(start, end);
+    }
 }
