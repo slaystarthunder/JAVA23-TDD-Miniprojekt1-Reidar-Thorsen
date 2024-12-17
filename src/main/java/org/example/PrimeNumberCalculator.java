@@ -17,4 +17,31 @@ public class PrimeNumberCalculator {
         return true;
     }
 
+    // This method counts prime numbers within a given range [start, end]
+    public int countPrimeNumbers(int start, int end) {
+        int count = 0;
+        for (int i = start; i <= end; i++) {
+            if (isPrime(i)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public int sumPrimeNumbers(int start, int end) {
+        // Initalize the sum to 0
+        int sum = 0;
+
+        // Loop through all numbers in the given range
+        for (int i = start; i <= end; i++) {
+            // Check the current number i is a prime number
+            if (isPrime(i)) {
+                // Add the prime number to total sum
+                sum += i;
+            }
+        }
+
+        return sum;
+    }
+
 }
