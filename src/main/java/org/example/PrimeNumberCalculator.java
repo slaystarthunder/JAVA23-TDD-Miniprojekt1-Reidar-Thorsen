@@ -50,19 +50,19 @@ public class PrimeNumberCalculator {
 
     private void validateInput(int start, int end) {
         if (start <0 || end > 1000 || start > end) {
-            throw new IllegalArgumentException("Oops, wrong interval specified");
+            throw new IllegalArgumentException("Hoppsan, fel intervall angivet!");
         }
     }
 
     // Console output methods
     public void printCount(int start, int end) {
         int count = countPrimeNumbers(start,  end);
-        System.out.println("Hi, there are " + count + " prime numbers between 0 and 1000");
+        System.out.println("Hej, det finns " + count + " primtal mellan 0 och 1000!");
     }
 
     public void printSum(int start, int end) {
         int sum = sumPrimeNumbers(start, end);
-        System.out.println("The total sum of these numbers are " + sum + ".");
+        System.out.println("Och den totala summan av dessa primtal är " + sum + ".");
     }
 
 
